@@ -19,6 +19,7 @@ export default class CircuitBreakerScraper {
     await page.goto(this.url);
     // Wait for the required DOM to be rendered
     const scrapeCurrentPage = async () => {
+      console.log('**Scraping CircuitBreaker**');
       await page.waitForSelector('.content');
       let circuit_breaker: CreateCircuitBreakerDto[] = [
         {
@@ -74,6 +75,7 @@ export default class CircuitBreakerScraper {
 
       // console.log('circuit_breaker', circuit_breaker);
       // return circuit_breaker;
+      console.log('Scraping CircuitBreaker done...!!!');
     };
     const data = await scrapeCurrentPage();
     //console.log('data...', data);

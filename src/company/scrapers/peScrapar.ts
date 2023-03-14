@@ -23,6 +23,7 @@ export default class PeScrap {
 
     // Wait for the required DOM to be rendered
     const scrapeCurrentPage = async () => {
+      console.log('***Scraping Price Earning***');
       await page.waitForSelector('.content');
 
       let price_earnings_scrap: CreatePeDto[] = [
@@ -84,6 +85,7 @@ export default class PeScrap {
       );
       // console.log('created records', is_created);
       // return price_earnings_scrap;
+      console.log('Scraping Price Earning done...!!!');
     };
     const data = await scrapeCurrentPage();
     //console.log('data...', data);

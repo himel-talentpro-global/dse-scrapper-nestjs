@@ -47,7 +47,7 @@ export default class PageService {
           },
         );
         if (id == 90) {
-          console.log('Code Scraping Done');
+          console.log('TradingCode Scraping Done...!!!');
         }
         companies.push(...company_code_name);
       }
@@ -59,9 +59,11 @@ export default class PageService {
 
       let link = '';
 
+      console.log('**Scraping company info**');
       const pagePromise = (code): Promise<CreateCompanyDto> =>
         new Promise(async (resolve, reject) => {
           // let dataObj: CreateCompanyDto = {};
+
           let dataObj = new CreateCompanyDto();
           const newPage = await browser.newPage();
           // console.log("code", code);
@@ -328,6 +330,7 @@ export default class PageService {
         // =============================================
         // scrapedData.push(currentPageData);
       }
+      console.log('Scraping company info done...!!!');
     };
     const data = await scrapeCurrentPage();
     // console.log('data...', data);
