@@ -6,4 +6,4 @@ yarn
 
 yarn start
 
-**_Runnig the app first time typeORM Common data source options 'synchronize: true' in '.src/company/company.module.ts' must be commented out_**
+**After Runnig the app first time typeORM Common data source options 'synchronize: true' in '.src/company/company.module.ts' must be commented out_**
