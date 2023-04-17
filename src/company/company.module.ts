@@ -16,9 +16,9 @@ import { CompanyService } from '../company/services/company.service';
 import { PeService } from '../company/services/pe.service';
 import { CircuitBreakerService } from '../company/services/circuitBreaker.service';
 
-import { Company } from './entities/company.entities';
-import { PE } from './entities/pe.entities';
-import { CircuitBreaker } from './entities/circuitBreaker.entities';
+import { Companies } from './entities/company.entities';
+import { Price_earnings } from './entities/pe.entities';
+import { Circuit_breaks } from './entities/circuitBreaker.entities';
 
 @Module({
   imports: [
@@ -28,12 +28,12 @@ import { CircuitBreaker } from './entities/circuitBreaker.entities';
       port: 3306,
       username: 'root',
       //   password: 'password',
-      database: 'dse_scraped_data',
-      entities: [Company, PE, CircuitBreaker],
-      // synchronize: true,
+      database: 'scraped_data',
+      entities: [Companies, Price_earnings, Circuit_breaks],
+      synchronize: true,
       //!if enabled every time run the app will try to create table using registerd entity (runs migration automatically).
     }),
-    TypeOrmModule.forFeature([Company, PE, CircuitBreaker]), //to use typeORM Repository on company entity
+    TypeOrmModule.forFeature([Companies, Price_earnings, Circuit_breaks]), //to use typeORM Repository on entities
   ],
   controllers: [],
   providers: [

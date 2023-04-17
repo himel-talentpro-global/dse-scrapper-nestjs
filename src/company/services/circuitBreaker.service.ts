@@ -2,14 +2,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CircuitBreaker } from '../entities/circuitBreaker.entities';
+import { Circuit_breaks } from '../entities/circuitBreaker.entities';
 import { CreateCircuitBreakerDto } from '../dto/circuitBreaker.dto';
 
 @Injectable()
 export class CircuitBreakerService {
   constructor(
-    @InjectRepository(CircuitBreaker)
-    private readonly circuitBreakerRepository: Repository<CircuitBreaker>,
+    @InjectRepository(Circuit_breaks)
+    private readonly circuitBreakerRepository: Repository<Circuit_breaks>,
   ) {}
 
   async upsertCircuitBreakerEntity(
@@ -23,31 +23,31 @@ export class CircuitBreakerService {
       //   break;
       // }
       const {
-        code,
+        trade_code,
         breaker,
         tickSize,
         openAdjPrice,
         floorPrice,
         lowerLimit,
         upperLimit,
-        floorPriceBlockMakret,
+        floorPriceBlockMarket,
         // date,
       } = createCircuitBreakerDto;
-      const circuitBreaker = new CircuitBreaker();
+      const circuitBreaker = new Circuit_breaks();
 
-      circuitBreaker.code = code;
+      circuitBreaker.trade_code = trade_code;
       circuitBreaker.breaker = breaker;
       circuitBreaker.tickSize = tickSize;
       circuitBreaker.openAdjPrice = openAdjPrice;
       circuitBreaker.floorPrice = floorPrice;
       circuitBreaker.lowerLimit = lowerLimit;
       circuitBreaker.upperLimit = upperLimit;
-      circuitBreaker.floorPriceBlockMakret = floorPriceBlockMakret;
+      circuitBreaker.floorPriceBlockMarket = floorPriceBlockMarket;
 
       const queryBuilder = this.circuitBreakerRepository
         .createQueryBuilder()
         .insert()
-        .into(CircuitBreaker)
+        .into(Circuit_breaks)
         .values(circuitBreaker)
         .orUpdate(
           [
@@ -57,7 +57,7 @@ export class CircuitBreakerService {
             'floorPrice',
             'lowerLimit',
             'upperLimit',
-            'floorPriceBlockMakret',
+            'floorPriceBlockMarket',
             'updated_at',
           ],
           // ['externalId'],

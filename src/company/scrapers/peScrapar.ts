@@ -28,7 +28,7 @@ export default class PeScrap {
 
       let price_earnings_scrap: CreatePeDto[] = [
         {
-          code: '',
+          company_code: '',
           close_price: '',
           ycp: '',
           pe_1: '',
@@ -37,6 +37,7 @@ export default class PeScrap {
           pe_4: '',
           pe_5: '',
           pe_6: '',
+          created_at: new Date(),
         },
       ];
       price_earnings_scrap = await page.$$eval(

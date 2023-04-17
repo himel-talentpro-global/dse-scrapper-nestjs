@@ -2,14 +2,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Company } from '../entities/company.entities';
+import { Companies } from '../entities/company.entities';
 import { CreateCompanyDto } from '../dto/company.dto';
 
 @Injectable()
 export class CompanyService {
   constructor(
-    @InjectRepository(Company)
-    private readonly companyRepository: Repository<Company>,
+    @InjectRepository(Companies)
+    private readonly companyRepository: Repository<Companies>,
   ) {}
 
   // async createCompany(createCompanyDto: CreateCompanyDto): Promise<Company> {
@@ -77,7 +77,7 @@ export class CompanyService {
 
   async upsertCompanyEntity(
     createCompanyDto: CreateCompanyDto,
-  ): Promise<Company> {
+  ): Promise<Companies> {
     const {
       code,
       name,
@@ -86,7 +86,7 @@ export class CompanyService {
       authorized_capital_mn,
       paidup_capital_mn,
       type_of_instrument,
-      total_outstanding_share,
+      total_outstanding_share_mn,
       face_par_value,
       sector,
       cash_dividend,
@@ -95,7 +95,7 @@ export class CompanyService {
       eps,
       listing_since,
       category,
-      ponsor_director,
+      sponsor_director,
       govt,
       institute,
       foreign,
@@ -108,7 +108,7 @@ export class CompanyService {
 
     // console.log('_public', _public);
 
-    const company = new Company();
+    const company = new Companies();
 
     company.code = code;
     company.name = name;
@@ -117,7 +117,7 @@ export class CompanyService {
     company.authorized_capital_mn = authorized_capital_mn;
     company.paidup_capital_mn = paidup_capital_mn;
     company.type_of_instrument = type_of_instrument;
-    company.total_outstanding_share = total_outstanding_share;
+    company.total_outstanding_share_mn = total_outstanding_share_mn;
     company.face_par_value = face_par_value;
     company.sector = sector;
     company.cash_dividend = cash_dividend;
@@ -126,7 +126,7 @@ export class CompanyService {
     company.eps = eps;
     company.listing_since = listing_since;
     company.category = category;
-    company.ponsor_director = ponsor_director;
+    company.sponsor_director = sponsor_director;
     company.govt = govt;
     company.institute = institute;
     company.foreign = foreign;
@@ -139,7 +139,7 @@ export class CompanyService {
     const queryBuilder = this.companyRepository
       .createQueryBuilder()
       .insert()
-      .into(Company)
+      .into(Companies)
       .values(company)
       .orUpdate([
         'name',
@@ -148,7 +148,7 @@ export class CompanyService {
         'authorized_capital_mn',
         'paidup_capital_mn',
         'type_of_instrument',
-        'total_outstanding_share',
+        'total_outstanding_share_mn',
         'face_par_value',
         'sector',
         'cash_dividend',
@@ -157,7 +157,7 @@ export class CompanyService {
         'eps',
         'listing_since',
         'category',
-        'ponsor_director',
+        'sponsor_director',
         'govt',
         'institute',
         'foreign',
