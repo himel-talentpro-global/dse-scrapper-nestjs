@@ -7,7 +7,7 @@ export class CreateCompanyDto {
   authorized_capital_mn: string;
   paidup_capital_mn: string;
   type_of_instrument: string;
-  total_outstanding_share: string;
+  total_outstanding_share_mn: string;
   face_par_value: string;
   sector: string;
   cash_dividend: string;
@@ -16,7 +16,7 @@ export class CreateCompanyDto {
   eps: string;
   listing_since: string;
   category: string;
-  ponsor_director: string;
+  sponsor_director: string;
   govt: string;
   institute: string;
   foreign: string;

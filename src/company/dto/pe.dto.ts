@@ -1,5 +1,5 @@
 export class CreatePeDto {
-  code: string;
+  company_code: string;
   close_price: string;
   ycp: string;
   pe_1: string;

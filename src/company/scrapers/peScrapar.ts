@@ -28,7 +28,7 @@ export default class PeScrap {
 
       let price_earnings_scrap: CreatePeDto[] = [
         {
-          code: '',
+          company_code: '',
           close_price: '',
           ycp: '',
           pe_1: '',
@@ -46,7 +46,7 @@ export default class PeScrap {
             const value = te.querySelector('td');
 
             return {
-              code: value.nextElementSibling.textContent,
+              company_code: value.nextElementSibling.textContent,
               close_price:
                 value.nextElementSibling.nextElementSibling.textContent,
               ycp: value.nextElementSibling.nextElementSibling

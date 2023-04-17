@@ -34,7 +34,7 @@ export class Company {
   type_of_instrument: string;
 
   @Column()
-  total_outstanding_share: string;
+  total_outstanding_share_mn: string;
 
   @Column()
   face_par_value: string;
@@ -61,7 +61,7 @@ export class Company {
   category: string;
 
   @Column()
-  ponsor_director: string;
+  sponsor_director: string;
 
   @Column({ nullable: true })
   govt: string;

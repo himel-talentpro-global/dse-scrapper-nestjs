@@ -24,7 +24,7 @@ export class PeService {
       // }
 
       const {
-        code,
+        company_code,
         close_price,
         ycp,
         pe_1,
@@ -38,7 +38,7 @@ export class PeService {
 
       const pe = new PE();
 
-      pe.code = code;
+      pe.company_code = company_code;
       pe.close_price = close_price;
       pe.ycp = ycp;
       pe.pe_1 = pe_1;
@@ -66,7 +66,7 @@ export class PeService {
             'updated_at',
           ],
           // [
-          //   // 'code',
+          //   // 'company_code',
           //   // 'close_price',
           //   // 'ycp',
           //   // 'pe_1',
@@ -86,7 +86,7 @@ export class PeService {
       await queryBuilder.execute();
 
       // const upsertedEntity = await this.peRepository.findOneOrFail({
-      //   where: { code: code },
+      //   where: { company_code: company_code },
       // });
     }
 

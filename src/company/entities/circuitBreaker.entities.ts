@@ -10,7 +10,7 @@ import {
 @Entity()
 export class CircuitBreaker {
   @PrimaryColumn()
-  code: string;
+  trade_code: string;
 
   @Column()
   breaker: string;
@@ -31,7 +31,7 @@ export class CircuitBreaker {
   upperLimit: string;
 
   @Column()
-  floorPriceBlockMakret: string;
+  floorPriceBlockMarket: string;
 
   @Column({ primary: true, type: 'date' })
   // @PrimaryColumn({ type: 'date' })

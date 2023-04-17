@@ -23,14 +23,14 @@ export default class CircuitBreakerScraper {
       await page.waitForSelector('.content');
       let circuit_breaker: CreateCircuitBreakerDto[] = [
         {
-          code: ' ',
+          trade_code: ' ',
           breaker: ' ',
           tickSize: ' ',
           openAdjPrice: ' ',
           floorPrice: ' ',
           lowerLimit: ' ',
           upperLimit: ' ',
-          floorPriceBlockMakret: ' ',
+          floorPriceBlockMarket: ' ',
         },
       ];
       circuit_breaker = await page.$$eval(
@@ -40,7 +40,7 @@ export default class CircuitBreakerScraper {
             const value = te.querySelector('td');
             return {
               // id: value.textContent,
-              code: value.nextElementSibling.textContent,
+              trade_code: value.nextElementSibling.textContent,
               breaker: value.nextElementSibling.nextElementSibling.textContent,
               tickSize:
                 value.nextElementSibling.nextElementSibling.nextElementSibling
@@ -59,7 +59,7 @@ export default class CircuitBreakerScraper {
                 value.nextElementSibling.nextElementSibling.nextElementSibling
                   .nextElementSibling.nextElementSibling.nextElementSibling
                   .nextElementSibling.textContent,
-              floorPriceBlockMakret:
+              floorPriceBlockMarket:
                 value.nextElementSibling.nextElementSibling.nextElementSibling
                   .nextElementSibling.nextElementSibling.nextElementSibling
                   .nextElementSibling.nextElementSibling.textContent,

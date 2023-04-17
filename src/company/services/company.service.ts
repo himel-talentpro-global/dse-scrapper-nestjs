@@ -86,7 +86,7 @@ export class CompanyService {
       authorized_capital_mn,
       paidup_capital_mn,
       type_of_instrument,
-      total_outstanding_share,
+      total_outstanding_share_mn,
       face_par_value,
       sector,
       cash_dividend,
@@ -95,7 +95,7 @@ export class CompanyService {
       eps,
       listing_since,
       category,
-      ponsor_director,
+      sponsor_director,
       govt,
       institute,
       foreign,
@@ -117,7 +117,7 @@ export class CompanyService {
     company.authorized_capital_mn = authorized_capital_mn;
     company.paidup_capital_mn = paidup_capital_mn;
     company.type_of_instrument = type_of_instrument;
-    company.total_outstanding_share = total_outstanding_share;
+    company.total_outstanding_share_mn = total_outstanding_share_mn;
     company.face_par_value = face_par_value;
     company.sector = sector;
     company.cash_dividend = cash_dividend;
@@ -126,7 +126,7 @@ export class CompanyService {
     company.eps = eps;
     company.listing_since = listing_since;
     company.category = category;
-    company.ponsor_director = ponsor_director;
+    company.sponsor_director = sponsor_director;
     company.govt = govt;
     company.institute = institute;
     company.foreign = foreign;
@@ -148,7 +148,7 @@ export class CompanyService {
         'authorized_capital_mn',
         'paidup_capital_mn',
         'type_of_instrument',
-        'total_outstanding_share',
+        'total_outstanding_share_mn',
         'face_par_value',
         'sector',
         'cash_dividend',
@@ -157,7 +157,7 @@ export class CompanyService {
         'eps',
         'listing_since',
         'category',
-        'ponsor_director',
+        'sponsor_director',
         'govt',
         'institute',
         'foreign',

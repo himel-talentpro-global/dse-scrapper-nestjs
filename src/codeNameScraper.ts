@@ -123,7 +123,7 @@ export default class PageService {
                     'td',
                   ).nextElementSibling.nextElementSibling.textContent;
 
-                obj['total_outstanding_share'] =
+                obj['total_outstanding_share_mn'] =
                   baseElement.nextElementSibling.nextElementSibling.nextElementSibling.querySelector(
                     'td',
                   ).textContent;
@@ -188,7 +188,7 @@ export default class PageService {
                   .trim()
                   .split(' ');
 
-                obj['ponsor_director'] = ShareholdingArray[1];
+                obj['sponsor_director'] = ShareholdingArray[1];
                 obj['govt'] = ShareholdingArray[3];
                 obj['institute'] = ShareholdingArray[5];
                 obj['foreign'] = ShareholdingArray[7];

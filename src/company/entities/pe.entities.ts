@@ -11,7 +11,7 @@ import {
 export class PE {
   @Column()
   @PrimaryColumn()
-  code: string;
+  company_code: string;
 
   @Column({ length: 100 })
   close_price: string;

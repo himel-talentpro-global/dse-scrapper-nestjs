@@ -23,26 +23,26 @@ export class CircuitBreakerService {
       //   break;
       // }
       const {
-        code,
+        trade_code,
         breaker,
         tickSize,
         openAdjPrice,
         floorPrice,
         lowerLimit,
         upperLimit,
-        floorPriceBlockMakret,
+        floorPriceBlockMarket,
         // date,
       } = createCircuitBreakerDto;
       const circuitBreaker = new CircuitBreaker();
 
-      circuitBreaker.code = code;
+      circuitBreaker.trade_code = trade_code;
       circuitBreaker.breaker = breaker;
       circuitBreaker.tickSize = tickSize;
       circuitBreaker.openAdjPrice = openAdjPrice;
       circuitBreaker.floorPrice = floorPrice;
       circuitBreaker.lowerLimit = lowerLimit;
       circuitBreaker.upperLimit = upperLimit;
-      circuitBreaker.floorPriceBlockMakret = floorPriceBlockMakret;
+      circuitBreaker.floorPriceBlockMarket = floorPriceBlockMarket;
 
       const queryBuilder = this.circuitBreakerRepository
         .createQueryBuilder()
@@ -57,7 +57,7 @@ export class CircuitBreakerService {
             'floorPrice',
             'lowerLimit',
             'upperLimit',
-            'floorPriceBlockMakret',
+            'floorPriceBlockMarket',
             'updated_at',
           ],
           // ['externalId'],
