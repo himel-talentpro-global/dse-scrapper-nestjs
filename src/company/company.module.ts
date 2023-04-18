@@ -32,7 +32,6 @@ import { Circuit_breaks } from './entities/circuitBreaker.entities';
       entities: [Companies, Price_earnings, Circuit_breaks],
       synchronize: true,
       //!if enabled every time run the app will try to create table using registerd entity (runs migration automatically).
-      //newFile
     }),
     TypeOrmModule.forFeature([Companies, Price_earnings, Circuit_breaks]), //to use typeORM Repository on entities
   ],
