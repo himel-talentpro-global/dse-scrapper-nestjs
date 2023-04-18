@@ -28,7 +28,7 @@ import { Circuit_breaks } from './entities/circuitBreaker.entities';
       port: 3306,
       username: 'root',
       //   password: 'password',
-      database: 'scraped_data',
+      database: 'dse_scraped_data',
       entities: [Companies, Price_earnings, Circuit_breaks],
       synchronize: true,
       //!if enabled every time run the app will try to create table using registerd entity (runs migration automatically).
