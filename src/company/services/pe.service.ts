@@ -2,14 +2,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PE } from '../entities/pe.entities';
+import { Price_earnings } from '../entities/pe.entities';
 import { CreatePeDto } from '../dto/pe.dto';
 
 @Injectable()
 export class PeService {
   constructor(
-    @InjectRepository(PE)
-    private readonly peRepository: Repository<PE>,
+    @InjectRepository(Price_earnings)
+    private readonly peRepository: Repository<Price_earnings>,
   ) {}
 
   //!===============================================
@@ -33,10 +33,11 @@ export class PeService {
         pe_4,
         pe_5,
         pe_6,
+        created_at,
         // date,
       } = createPeDto;
 
-      const pe = new PE();
+      const pe = new Price_earnings();
 
       pe.company_code = company_code;
       pe.close_price = close_price;
@@ -47,14 +48,16 @@ export class PeService {
       pe.pe_4 = pe_4;
       pe.pe_5 = pe_5;
       pe.pe_6 = pe_6;
+      pe.created_at = created_at;
 
       const queryBuilder = this.peRepository
         .createQueryBuilder()
         .insert()
-        .into(PE)
+        .into(Price_earnings)
         .values(pe)
         .orUpdate(
           [
+            'company_code',
             'close_price',
             'ycp',
             'pe_1',
@@ -64,6 +67,7 @@ export class PeService {
             'pe_5',
             'pe_6',
             'updated_at',
+            'created_at',
           ],
           // [
           //   // 'company_code',

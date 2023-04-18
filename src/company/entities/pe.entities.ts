@@ -8,10 +8,10 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class PE {
+export class Price_earnings {
   @Column()
   @PrimaryColumn()
-  company_code: string;
+  company_code: string; //!==============
 
   @Column({ length: 100 })
   close_price: string;

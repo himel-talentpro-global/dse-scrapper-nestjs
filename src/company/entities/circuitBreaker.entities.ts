@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class CircuitBreaker {
+export class Circuit_breaks {
   @PrimaryColumn()
   trade_code: string;
 
@@ -31,7 +31,7 @@ export class CircuitBreaker {
   upperLimit: string;
 
   @Column()
-  floorPriceBlockMarket: string;
+  floorPriceBlockMarket: string; //!=============
 
   @Column({ primary: true, type: 'date' })
   // @PrimaryColumn({ type: 'date' })

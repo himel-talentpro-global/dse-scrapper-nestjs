@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Company {
+export class Companies {
   // @PrimaryGeneratedColumn()
   // id: number;
 
@@ -25,7 +25,7 @@ export class Company {
   market_capitalization_mn: string;
 
   @Column()
-  authorized_capital_mn: string;
+  authorized_capital_mn: string; //!=========
 
   @Column()
   paidup_capital_mn: string;
@@ -61,7 +61,7 @@ export class Company {
   category: string;
 
   @Column()
-  sponsor_director: string;
+  sponsor_director: string; //!-================
 
   @Column({ nullable: true })
   govt: string;

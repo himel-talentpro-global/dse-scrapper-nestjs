@@ -8,5 +8,6 @@ export class CreatePeDto {
   pe_4: string;
   pe_5: string;
   pe_6: string;
+  created_at: Date;
   // date: Date;
 }

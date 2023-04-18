@@ -2,19 +2,19 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Company } from '../entities/company.entities';
+import { Companies } from '../entities/company.entities';
 import { CreateCompanyDto } from '../dto/company.dto';
 
 @Injectable()
 export class CompanyService {
   constructor(
-    @InjectRepository(Company)
-    private readonly companyRepository: Repository<Company>,
+    @InjectRepository(Companies)
+    private readonly companyRepository: Repository<Companies>,
   ) {}
 
   async upsertCompanyEntity(
     createCompanyDto: CreateCompanyDto,
-  ): Promise<Company> {
+  ): Promise<Companies> {
     const {
       code,
       name,
@@ -45,7 +45,7 @@ export class CompanyService {
 
     // console.log('_public', _public);
 
-    const company = new Company();
+    const company = new Companies();
 
     company.code = code;
     company.name = name;
@@ -76,7 +76,7 @@ export class CompanyService {
     const queryBuilder = this.companyRepository
       .createQueryBuilder()
       .insert()
-      .into(Company)
+      .into(Companies)
       .values(company)
       .orUpdate([
         'name',
