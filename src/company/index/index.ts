@@ -14,9 +14,9 @@ export default class IndexProvider {
     private readonly circuitBreakerController: CircuitBreakerController,
   ) {}
   //Start the browser and create a browser instance
-  // @Cron(CronExpression.EVERY_5_MINUTES)
+  @Cron(CronExpression.EVERY_5_MINUTES)
   // @Cron(CronExpression.EVERY_MINUTE)
-  @Cron('*/2 * * * *') // for every 2 minutes
+  // @Cron('*/2 * * * *') // for every 2 minutes
   async func() {
     const browserInstance = this.browserObject.startBrowser();
 
