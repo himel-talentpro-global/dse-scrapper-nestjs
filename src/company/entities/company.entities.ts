@@ -70,7 +70,7 @@ export class Company {
   institute: string;
 
   @Column({ nullable: true })
-  foreign: string;
+  _foreign: string;
 
   @Column({ nullable: true })
   public: string;
@@ -87,5 +87,5 @@ export class Company {
   // @Column({ type: 'date' })   // all types are working here
   // @CreateDateColumn()
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  date: Date;
+  created_at: Date;
 }

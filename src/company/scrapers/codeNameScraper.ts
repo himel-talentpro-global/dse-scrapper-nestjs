@@ -259,7 +259,7 @@ export default class PageService {
                 obj['sponsor_director'] = ShareholdingArray[1];
                 obj['govt'] = ShareholdingArray[3];
                 obj['institute'] = ShareholdingArray[5];
-                obj['foreign'] = ShareholdingArray[7];
+                obj['_foreign'] = ShareholdingArray[7];
                 obj['_public'] = ShareholdingArray[9];
 
                 // console.log('public....'); //!.............................

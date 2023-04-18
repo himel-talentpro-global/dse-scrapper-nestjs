@@ -19,10 +19,10 @@ export class CreateCompanyDto {
   sponsor_director: string;
   govt: string;
   institute: string;
-  foreign: string;
+  _foreign: string;
   _public: string;
   address: string;
   phone: string;
   email: string;
-  // date: Date;
+  // created_at: Date;
 }

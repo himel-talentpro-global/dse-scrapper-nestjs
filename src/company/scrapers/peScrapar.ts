@@ -80,15 +80,9 @@ export default class PeScrap {
 
       //   //! Database insertion'''''''''''''''''''
 
-      const is_created = await this.peService.upsertPeEntity(
-        price_earnings_scrap,
-      );
-      // console.log('created records', is_created);
-      // return price_earnings_scrap;
+      await this.peService.upsertPeEntity(price_earnings_scrap);
       console.log('Scraping Price Earning done...!!!');
     };
-    const data = await scrapeCurrentPage();
-    //console.log('data...', data);
-    // return data;
+    await scrapeCurrentPage();
   }
 }

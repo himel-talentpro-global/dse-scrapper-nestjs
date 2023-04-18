@@ -25,13 +25,14 @@ import { CircuitBreaker } from './entities/circuitBreaker.entities';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3307,
+      port: 3306,
       username: 'root',
       //   password: 'password',
       database: 'dse_scraped_data',
       entities: [Company, PE, CircuitBreaker],
-      // synchronize: true,
+      synchronize: true,
       //!if enabled every time run the app will try to create table using registerd entity (runs migration automatically).
+      //newFile
     }),
     TypeOrmModule.forFeature([Company, PE, CircuitBreaker]), //to use typeORM Repository on company entity
   ],
